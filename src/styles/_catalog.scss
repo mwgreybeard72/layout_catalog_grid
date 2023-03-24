@@ -5,8 +5,20 @@
   justify-content: center;
   grid-template-columns: $column-size;
   gap: 48px;
-  
+
   max-width: 944px;
+
+  @media (min-width: 488px) and (max-width: 767px) {
+      grid-template-columns: repeat(2, $column-size);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+      grid-template-columns: repeat(3, $column-size);
+  }
+
+  @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, $column-size);
+  }
 
   &__card {
     display: flex;
@@ -18,23 +30,5 @@
 
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .catalog {
-    grid-template-columns: repeat(4, $column-size);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .catalog {
-    grid-template-columns: repeat(3, $column-size);
-  }
-}
-
-@media (min-width: 488px) and (max-width: 767px) {
-  .catalog {
-    grid-template-columns: repeat(2, $column-size);
   }
 }
