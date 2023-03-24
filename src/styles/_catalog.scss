@@ -1,11 +1,12 @@
+@import "./utils/variables.scss";
+
 .catalog {
   display: grid;
-  grid-template-columns: 200px;
+  justify-content: center;
+  grid-template-columns: $column-size;
   gap: 48px;
-
+  
   max-width: 944px;
-
-  margin: 0 auto;
 
   &__card {
     display: flex;
@@ -13,7 +14,7 @@
     align-items: center;
 
     height: 300px;
-    width: 200px;
+    width: $column-size;
 
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -22,24 +23,18 @@
 
 @media (min-width: 1024px) {
   .catalog {
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(4, $column-size);
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .catalog {
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, $column-size);
   }
 }
 
 @media (min-width: 488px) and (max-width: 767px) {
   .catalog {
-    grid-template-columns: repeat(2, 200px);
-  }
-}
-
-@media (max-width: 487px) {
-  .catalog {
-    grid-template-columns: repeat(1, 200px);
+    grid-template-columns: repeat(2, $column-size);
   }
 }
